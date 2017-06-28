@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>World's Smartest Webpage</title>
+            
+        </head>    
+        <body>
+                <div id="container">
+                    Question: <input type="text" id="questionBox"><br>
+                    Username: <input type="text" id="usernameBox"><br>
+                    Password: <input type="password" id="passwordBox" onkeyup='enableButton();'><br>
+                    
+                    <input type='button' id='answer'  value='Answer the Question!' onclick='buttonClick();'>
+                </div>
+            
+        </body>
+        <script>
+            
+            document.getElementById("answer").disabled = true;
+            
+            function enableButton(){
+                
+                var password = document.getElementById('passwordBox').value;
+                if(password){
+                    document.getElementById("answer").disabled = false;
+                }else{
+                    document.getElementById("answer").disabled = true;
+                }
+            }
+            
+            function buttonClick(){
+                var password = document.getElementById('passwordBox').value;
+                
+                //if(!password){
+                //    alert("Please enter password!");
+                //    return;
+                //}
+                
+                document.getElementById('container').innerHTML = password;
+            }
+            
+        </script>
+        
+    </html>
